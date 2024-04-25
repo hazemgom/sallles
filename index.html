@@ -36,7 +36,7 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "831787120";
+    const serviceWorkerVersion = "3432202102";
 
 
 
@@ -64,6 +64,17 @@
 
 
 
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/flutter_service_worker.js').then(registration => {
+        console.log('Service Worker registered:', registration);
+      }).catch(error => {
+        console.error('Service Worker registration failed:', error);
+      });
+    });
+  }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdWjuwvbWUbF7RSlb7bYr5mFJv4oAIAbs&libraries=places"></script>
 
